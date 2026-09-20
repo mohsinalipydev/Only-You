@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#3d123f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<title>For Shumaila ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Pacifico&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  min-height:100vh;min-height:100dvh;
+  overflow-x:hidden;color:#fff;
+  font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:radial-gradient(circle at 50% 20%,#7e285e 0,#3d123f 42%,#13091f 100%);
+  touch-action:manipulation;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;
+  padding-top:env(safe-area-inset-top);
+  padding-bottom:env(safe-area-inset-bottom);
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:25px 25px}
+.screen{
+  min-height:100vh;min-height:100dvh;
+  display:none;align-items:center;justify-content:center;
+  padding:24px 16px;padding-top:calc(24px + env(safe-area-inset-top));
+  padding-bottom:calc(28px + env(safe-area-inset-bottom));
+  padding-left:calc(16px + env(safe-area-inset-left));
+  padding-right:calc(16px + env(safe-area-inset-right));
+  text-align:center;position:relative;
+}
+.screen.active{display:flex}
+.card{width:min(720px,100%);padding:44px 26px;border:1px solid rgba(255,255,255,.18);border-radius:32px;background:rgba(255,255,255,.08);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);box-shadow:0 30px 90px rgba(0,0,0,.38)}
+h1,h2{font-family:Pacifico,'Segoe Script',cursive;font-weight:400}
+h1{font-size:clamp(2.8rem,11vw,6rem);line-height:1.08;margin:14px 0;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,7.5vw,4.2rem);margin-bottom:15px;line-height:1.12}
+p{font-size:clamp(1rem,3.5vw,1.08rem);line-height:1.8;color:rgba(255,255,255,.92)}
+.small{text-transform:uppercase;letter-spacing:3px;font-size:clamp(.72rem,2.6vw,.82rem);opacity:.75;display:block;line-height:1.4}
+.btn{
+  border:0;cursor:pointer;
+  min-height:52px;min-width:52px;padding:15px 28px;
+  margin-top:27px;border-radius:999px;font-weight:700;font-size:1rem;
+  color:#541332;background:linear-gradient(135deg,#fff,#ffd2e4);
+  box-shadow:0 12px 30px rgba(255,86,151,.28);transition:transform .25s ease, box-shadow .25s ease;
+  touch-action:manipulation;-webkit-user-select:none;user-select:none;
+}
+@media(hover:hover){.btn:hover{transform:translateY(-3px) scale(1.02)}}
+.btn:active{transform:scale(.97)}
+.fade{animation:fade .8s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.pulse{animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.07)}}
+
+/* envelope */
+.envelope{width:min(230px,82vw);height:calc(min(230px,82vw) * 0.6739);margin:26px auto 18px;position:relative;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 18px 20px rgba(0,0,0,.3))}
+.env-body{position:absolute;inset:0;border-radius:10px;background:linear-gradient(145deg,#ff759f,#d92e68);overflow:hidden}
+.env-body:before,.env-body:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid}
+.env-body:before{left:0;border-width:0 calc(min(230px,82vw) * 0.5) calc(min(230px,82vw) * 0.3826) 0;border-color:transparent #c5245c transparent transparent}
+.env-body:after{right:0;border-width:calc(min(230px,82vw) * 0.3826) calc(min(230px,82vw) * 0.5) 0 0;border-color:#b91d54 transparent transparent transparent}
+.flap{position:absolute;z-index:3;top:0;left:0;width:0;height:0;border-left:calc(min(230px,82vw) * 0.5) solid transparent;border-right:calc(min(230px,82vw) * 0.5) solid transparent;border-top:calc(min(230px,82vw) * 0.3565) solid #ff91b3;transform-origin:top;transition:.7s}
+.envelope.open .flap{transform:rotateX(180deg);z-index:0}
+.seal{position:absolute;z-index:5;left:50%;top:54%;transform:translate(-50%,-50%);width:48px;height:48px;min-width:48px;min-height:48px;border-radius:50%;background:#fff;color:#d72f68;display:grid;place-items:center;font-size:22px;box-shadow:0 5px 12px #8b1645}
+.letter{position:absolute;z-index:2;left:14px;right:14px;bottom:15px;height:120px;background:#fff9fb;color:#81234e;border-radius:5px;padding:12px;font-size:clamp(12px,3.6vw,14px);line-height:1.42;transition:.7s;overflow:hidden}
+.envelope.open .letter{transform:translateY(-75px)}
+
+/* wish */
+.cake{font-size:clamp(5rem,20vw,6.5rem);animation:cake 1.1s ease both;display:inline-block}
+@keyframes cake{from{transform:scale(.1);opacity:0}70%{transform:scale(1.12)}to{transform:scale(1)}}
+.wishbox{margin:22px auto;padding:18px 16px;max-width:570px;border-radius:22px;background:rgba(0,0,0,.14)}
+.type{min-height:120px;min-height:clamp(110px,32vw,130px)}
+.heart{position:fixed;bottom:-50px;z-index:30;pointer-events:none;animation:float linear forwards}
+@keyframes float{to{transform:translateY(-115dvh) rotate(30deg);opacity:0}}
+.conf{position:fixed;top:-30px;z-index:40;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110dvh) rotate(720deg);opacity:0}}
+.memory-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:24px auto;max-width:460px;width:100%}
+.memory{aspect-ratio:4/5;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,150,190,.22),rgba(255,255,255,.06));font-size:clamp(2.2rem,8.5vw,2.8rem);border:1px solid rgba(255,255,255,.14);color:#fff;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.06);position:relative}
+.memory img{width:100%;height:100%;object-fit:cover;display:block}
+.memory::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 60px rgba(0,0,0,.18)}
+.letter-card{margin:22px auto 0;text-align:left;padding:22px 18px;border-radius:20px;background:rgba(255,248,251,.96);color:#63203f;line-height:1.82;box-shadow:0 15px 40px rgba(0,0,0,.15);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.letter-card p{color:#63203f;font-size:clamp(.97rem,3.4vw,1.05rem);line-height:1.8;margin-top:10px}
+.letter-card p:first-child{margin-top:0}
+.letter-card strong{color:#c72d68}
+.final-heart{font-size:clamp(5rem,20vw,6rem);animation:pulse 1.3s infinite;display:inline-block}
+.music{
+  position:fixed;
+  right:calc(16px + env(safe-area-inset-right));
+  top:calc(16px + env(safe-area-inset-top));
+  z-index:60;
+  width:50px;height:50px;min-width:50px;min-height:50px;
+  border:1px solid #ffffff33;border-radius:50%;
+  background:#ffffff14;color:#fff;cursor:pointer;
+  display:grid;place-items:center;font-size:20px;
+  touch-action:manipulation;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  transition:box-shadow .3s ease, transform .2s ease;
+}
+.music:active{transform:scale(.92)}
+.music.playing{
+  color:#ffd2e4;border-color:#ff7aa866;background:#ffffff20;
+  box-shadow:0 0 0 0 rgba(255,122,168,.6),0 10px 30px rgba(255,86,151,.35);
+  animation:musicPulse 2.2s ease-in-out infinite;
+}
+@keyframes musicPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,122,168,.55),0 10px 30px rgba(255,86,151,.35)}
+  50%{box-shadow:0 0 0 10px rgba(255,122,168,0),0 10px 30px rgba(255,86,151,.4)}
+}
+#ytplayer{display:none}
+.toast{
+  position:fixed;left:50%;top:22%;transform:translate(-50%,-8px) scale(.96);
+  z-index:999;max-width:calc(100vw - 40px);
+  padding:12px 16px;border-radius:16px;
+  background:rgba(255,248,251,.98);color:#63203f;
+  font-family:'DM Sans',system-ui,sans-serif;font-size:.92rem;font-weight:500;line-height:1.45;
+  box-shadow:0 16px 45px rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;transition:opacity .28s ease, transform .28s ease;
+  text-align:center;border:1px solid rgba(255,122,168,.35);
+}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1);pointer-events:auto}
+.toast a{color:#c72d68;text-decoration:underline;font-weight:700}
+.toast label[for]{color:#c72d68;text-decoration:underline;font-weight:700}
+
+/* ---- Tablet / Large phones (540px and below) ---- */
+@media(max-width:540px){
+  .card{padding:32px 20px;border-radius:26px}
+  .memory-grid{max-width:100%;gap:10px;margin:20px auto}
+  .memory{border-radius:20px;aspect-ratio:4/5}
+  h1{font-size:clamp(2.6rem,12vw,5rem);margin:12px 0}
+  h2{font-size:clamp(2rem,8vw,3.8rem);margin-bottom:12px}
+  .wishbox{padding:16px 14px;border-radius:18px}
+  .letter-card{padding:20px 16px;border-radius:18px}
+}
+
+/* ---- Compact phones (380px and below) ---- */
+@media(max-width:380px){
+  .screen{padding:18px 12px;padding-top:calc(18px + env(safe-area-inset-top));padding-bottom:calc(22px + env(safe-area-inset-bottom))}
+  .card{padding:26px 16px;border-radius:22px}
+  .btn{padding:14px 22px;margin-top:22px;font-size:.98rem;min-height:50px}
+  h1{font-size:clamp(2.3rem,12.5vw,4rem)}
+  h2{font-size:clamp(1.8rem,8.5vw,3.2rem)}
+  .small{letter-spacing:2.4px}
+  .memory-grid{margin:18px auto}
+  .memory{border-radius:18px}
+  .letter-card{padding:17px 14px;border-radius:16px}
+  .letter-card p{margin-top:8px}
+  .envelope{margin:20px auto 12px}
+}
+
+/* ---- Landscape phones (short height) ---- */
+@media(max-height:640px) and (orientation:landscape){
+  .screen{padding:18px 16px;padding-top:calc(18px + env(safe-area-inset-top));padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+  .card{padding:26px 28px}
+  h1{font-size:clamp(2.2rem,7vw,3.6rem);margin:10px 0}
+  h2{font-size:clamp(1.8rem,5.5vw,3rem);margin-bottom:10px}
+  .cake{font-size:clamp(3.5rem,11vw,5rem)}
+  .final-heart{font-size:clamp(3.5rem,11vw,4.8rem)}
+  .envelope{width:170px;height:115px;margin:18px auto}
+  .btn{margin-top:20px;padding:12px 24px;min-height:48px}
+  .memory-grid{max-width:320px;margin:14px auto}
+  .memory{aspect-ratio:5/4;border-radius:16px}
+  .letter-card{padding:18px 18px;margin-top:18px}
+}
+
+/* ---- Larger tablets / desktops (>= 900px) ---- */
+@media(min-width:900px){
+  .card{padding:54px 42px;border-radius:36px}
+  .memory-grid{max-width:520px;margin:28px auto}
+  .memory{border-radius:26px}
+  .letter-card{padding:32px 28px}
+  .btn{padding:16px 34px}
+}
+
+/* ---- Reduce motion preference ---- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<button class="music" id="musicBtn" title="Tap for music · Tap twice to load MP3" aria-label="Music">♫</button>
+<div id="ytplayer"></div>
+<input type="file" id="mp3file" accept="audio/*" title="Pick an MP3 file to play" hidden>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<section class="screen active" id="start">
+<div class="card fade">
+<div class="small">A secret little surprise for</div>
+<h1>Shumaila ❤️</h1>
+<p>My love. My everything.<br>There is something special waiting for you...</p>
+<div class="envelope" id="envelope" onclick="openLetter()">
+ <div class="env-body"></div><div class="letter">💌<br><br>A little message from my heart...</div>
+ <div class="flap"></div><div class="seal">♥</div>
+</div>
+<p class="small">Tap the envelope to open it</p>
+</div>
+</section>
+
+<section class="screen" id="letter">
+<div class="card fade">
+<div class="small">A message from my heart</div>
+<h2>For You, Shumaila 💌</h2>
+<div class="letter-card">
+<p>My dear <strong>Shumaila</strong>,</p>
+<p>Today is not just another day. It is the day someone incredibly special came into this world. And I feel lucky to have you in my life.</p>
+<p>You are more than just someone I love. You are my happiness, my comfort, my favorite person, and <strong>my everything</strong>. ❤️</p>
+<p>I made this little surprise because sometimes a normal birthday wish doesn't feel enough for someone this special.</p>
+<p style="text-align:right"><strong>With all my heart ❤️</strong></p>
+</div>
+<button class="btn" onclick="birthday()">Continue to your surprise ✨</button>
+</div>
+</section>
+
+<section class="screen" id="birthday">
+<div class="card fade">
+<div class="small">Today belongs to you ✨</div>
+<div class="cake">🎂</div>
+<h2>Happy Birthday,<br>Shumaila! ❤️</h2>
+<div class="wishbox"><p class="type" id="typing"></p></div>
+<button class="btn pulse" onclick="celebrate()">Make a Wish ✨</button>
+</div>
+</section>
+
+<section class="screen" id="memories">
+<div class="card fade">
+<div class="small">little pieces of happiness</div>
+<h2>Our Little World 💕</h2>
+<p>Until we fill these spaces with our own memories, imagine these as the moments I wish we could keep forever.</p>
+<div class="memory-grid">
+<div class="memory"><img src="WhatsApp Image 2026-09-20 at 11.35.45 AM.jpeg" alt="Our memory together"></div>
+</div>
+<button class="btn" onclick="final()">There is one last thing... 💖</button>
+</div>
+</section>
+
+<section class="screen" id="final">
+<div class="card fade">
+<div class="small">the most important part</div>
+<div class="final-heart">❤️</div>
+<h2>Shumaila</h2>
+<p style="font-size:1.25rem">You are my love,<br><strong>my everything.</strong></p>
+<div class="letter-card">
+<p style="text-align:center">No website, no words, and no gift could ever completely explain how special you are to me.</p>
+<p style="text-align:center;margin-top:12px"><strong>Happy Birthday, my love. 🎂❤️</strong></p>
+<p style="text-align:center">May you always have reasons to smile, dreams to chase, and happiness surrounding you.</p>
+</div>
+<div style="font-size:2.2rem;margin-top:25px">🌹 💖 ✨ 🫶 ✨ 💖 🌹</div>
+<button class="btn" onclick="location.reload()">Replay the surprise 🔄</button>
+</div>
+</section>
+
+<script>
+const birthdayMessage="Happy Birthday, my love! I hope this beautiful day gives you as much happiness as you bring into my life. May every dream in your heart come true, and may your smile always stay as beautiful as it is today. You deserve all the love, happiness, and beautiful moments in the world. ❤️";
+
+/* ==============================
+   MUSIC — CLICK ♫ → PLAYS INSTANTLY, NO SUGGESTIONS, NO SETUP
+   3 tiers triggered in order INSIDE your click (user gesture permission carries):
+     1) Local music.mp3 (if file exists next to this page) — plays from middle, true Audio element
+     2) Dynamic YouTube iframe — injected DURING the click, autoplay=1 mute=0 start=123.
+        Because iframe is inserted inside a user gesture, browsers ALLOW autoplay with sound.
+     3) Top-level YouTube popup (only if 1+2 silent). Opens in click handler, popup blocker allows it.
+   No "fix me" toast. No file-pick prompts. No dock. No nothing. Just music + glowing button.
+   Double-tap / long-press ♫ → optional MP3 file picker (if you want to play your own file)
+   ============================== */
+const LOCAL_MP3     = "music.mp3";
+const YT_ID         = "0mQLTWvXbXM";
+const YT_START      = 123; // middle of Jab Tak (4:07 → 2:03)
+const YT_AUTOPLAY   = "https://www.youtube-nocookie.com/embed/"+YT_ID
+                    + "?autoplay=1&mute=0&start="+YT_START
+                    + "&loop=1&playlist="+YT_ID
+                    + "&controls=1&playsinline=1&modestbranding=1&rel=0&fs=0";
+const YT_POPUP_URL  = "https://www.youtube.com/watch?v="+YT_ID+"&t="+YT_START+"s&autoplay=1";
+
+const musicBtn  = document.getElementById("musicBtn");
+const toastEl   = document.getElementById("toast");
+const mp3File   = document.getElementById("mp3file");
+
+let isPlaying   = false;
+let toastTimer  = null;
+let userPicked  = false;
+let pressTimer  = null;
+let ytIframe    = null;     // cached dynamic iframe (created once on demand)
+let ytPlaying   = false;
+
+/* ---------- Tiny toast (only for "double tap to load MP3" or silent fallback — not on every click) ---------- */
+function showToast(html,ms){
+  if(toastTimer){clearTimeout(toastTimer);toastTimer=null;}
+  toastEl.innerHTML=html;
+  toastEl.classList.add("show");
+  if(ms){toastTimer=setTimeout(()=>{toastEl.classList.remove("show");},ms);}
+}
+function hideToast(){
+  if(toastTimer){clearTimeout(toastTimer);toastTimer=null;}
+  toastEl.classList.remove("show");
+}
+
+/* ---------- Audio element engine (for local music.mp3 / file picker) ---------- */
+const audio=new Audio(LOCAL_MP3);
+audio.loop=true;
+audio.volume=0.92;
+audio.addEventListener("playing",()=>{isPlaying=true;setVisual(true);});
+audio.addEventListener("pause",()=>{isPlaying=false;setVisual(false);});
+
+function playFromMiddle(src){
+  try{
+    audio.pause();
+    audio.src=src;
+    audio.load();
+    var seekMid=()=>{
+      try{if(audio.duration && isFinite(audio.duration)) audio.currentTime=Math.max(0,audio.duration/2);}catch(_){}
+    };
+    if(audio.duration>0) seekMid();
+    else audio.addEventListener("loadedmetadata",seekMid,{once:true});
+    return audio.play();
+  }catch(e){return Promise.reject(e);}
+}
+
+/* Optional MP3 file picker (double-tap / long-press or toast-link) */
+mp3File.addEventListener("change",(ev)=>{
+  const f=ev.target.files && ev.target.files[0];
+  if(!f)return;
+  userPicked=true;
+  playFromMiddle(URL.createObjectURL(f)).then(()=>{
+    hideToast();
+  }).catch(()=>{});
+});
+
+/* ---------- Dynamic YouTube iframe injected DURING click (transient activation carries) ---------- */
+function ensureYouTubeIframe(){
+  if(ytIframe) return ytIframe;
+  ytIframe=document.createElement("iframe");
+  ytIframe.setAttribute("title","Jab Tak");
+  ytIframe.setAttribute("loading","eager");
+  ytIframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+  ytIframe.setAttribute("allowfullscreen","");
+  ytIframe.setAttribute("referrerpolicy","strict-origin-when-cross-origin");
+  ytIframe.style.cssText="position:fixed;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none;border:0;z-index:1";
+  document.body.appendChild(ytIframe);
+  return ytIframe;
+}
+function playYouTubeDynamic(){
+  try{
+    const f=ensureYouTubeIframe();
+    /* Reset src every time to force re-autoplay with gesture */
+    f.src=YT_AUTOPLAY+"&rnd="+Math.floor(Math.random()*1e9);
+    ytPlaying=true;
+    isPlaying=true;
+    setVisual(true);
+    return true;
+  }catch(e){return false;}
+}
+function pauseYouTubeDynamic(){
+  try{ if(ytIframe){ ytIframe.src="about:blank"; } }catch(_){}
+  ytPlaying=false;
+}
+
+/* ---------- Button visual ---------- */
+function setVisual(on){
+  if(on){musicBtn.classList.add("playing");musicBtn.textContent="⏸";}
+  else{musicBtn.classList.remove("playing");musicBtn.textContent="♫";}
+}
+
+/* ---------- CORE TOGGLE — click → music. No suggestions, no setup prompts ---------- */
+function toggleMusic(){
+  /* PAUSE branch — stop everything */
+  if(isPlaying){
+    try{ audio.pause(); }catch(_){}
+    pauseYouTubeDynamic();
+    isPlaying=false;setVisual(false);
+    return;
+  }
+
+  hideToast();
+
+  /* PLAY branch — 3 tiers, all inside the click gesture: */
+  /* TIER 1 — local music.mp3 OR user-picked file */
+  const tryLocal = userPicked
+    ? (()=>{try{audio.currentTime=Math.max(0,(audio.duration||0)/2);return audio.play();}catch(e){return Promise.reject(e);}})()
+    : playFromMiddle(LOCAL_MP3);
+
+  tryLocal.then(()=>{
+    /* ✅ local audio works — we're done, no UI changes. */
+    isPlaying=true;setVisual(true);
+  }).catch(()=>{
+    /* TIER 2 — dynamic YouTube iframe (injected NOW, during click → autoplay with sound allowed) */
+    var ok2=playYouTubeDynamic();
+    /* TIER 3 — in case iframe still silent, open top-level YouTube popup (in click handler, so popup blocker allows it) */
+    try{ window.open(YT_POPUP_URL,"_blank","noopener"); }catch(_){ ok2=false; }
+    if(!ok2){
+      /* Last-resort toast, only if everything failed — extremely rare. */
+      showToast('🎵 <a href="'+YT_POPUP_URL+'" target="_blank" rel="noopener" style="font-weight:700">Open Jab Tak in YouTube ↗</a>',4000);
+    }else{
+      isPlaying=true;setVisual(true);
+    }
+  });
+}
+
+/* ---------- Music button: single click = toggle, double-click = optional file picker ---------- */
+let lastTap=0;
+musicBtn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  const now=Date.now();
+  if(now-lastTap<280){
+    if(pressTimer){clearTimeout(pressTimer);pressTimer=null;}
+    lastTap=0;
+    try{mp3File.click();}catch(_){}
+    return;
+  }
+  lastTap=now;
+  if(pressTimer){clearTimeout(pressTimer);}
+  pressTimer=setTimeout(()=>{pressTimer=null;toggleMusic();},260);
+});
+musicBtn.addEventListener("contextmenu",(e)=>{
+  e.preventDefault();
+  try{mp3File.click();}catch(_){}
+});
+
+/* ---------- Auto-start music on first envelope gesture (still no UI) ---------- */
+let gestureOnce=false;
+function onFirstGesture(){
+  if(gestureOnce)return;gestureOnce=true;
+  playFromMiddle(LOCAL_MP3).then(()=>{
+    isPlaying=true;setVisual(true);
+  }).catch(()=>{
+    /* If no music.mp3, user can still click ♫ anytime — dynamic YouTube + popup trigger */
+  });
+}
+function openLetter(){
+ onFirstGesture();
+ const e=document.getElementById("envelope");e.classList.add("open");hearts(12);
+ setTimeout(()=>show("letter"),900);
+}
+
+/* ---------- celebrate & final NEVER touch music state ---------- */
+function celebrate(){confetti(170);hearts(30);setTimeout(()=>show("memories"),900)}
+function final(){confetti(110);hearts(35);show("final")}
+
+/* ---------- Navigation + effects ---------- */
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");scrollTo(0,0)}
+function birthday(){
+ show("birthday");typeWriter(birthdayMessage,document.getElementById("typing"),24);
+}
+function typeWriter(t,el,s){el.textContent="";let i=0;let x=setInterval(()=>{el.textContent+=t[i++];if(i>=t.length)clearInterval(x)},s)}
+function hearts(n){
+ const a=["❤️","💖","💕","💗","💘","✨","🌸","🥰"];
+ for(let i=0;i<n;i++)setTimeout(()=>{
+  let h=document.createElement("div");h.className="heart";h.textContent=a[Math.floor(Math.random()*a.length)];
+  h.style.left=Math.random()*100+"vw";h.style.fontSize=18+Math.random()*25+"px";h.style.animationDuration=4+Math.random()*4+"s";
+  document.body.appendChild(h);setTimeout(()=>h.remove(),8500)
+ },i*80)
+}
+function confetti(n){
+ const a=["🎉","✨","💖","🌸","🎀","❤️"];
+ for(let i=0;i<n;i++)setTimeout(()=>{
+  let c=document.createElement("div");c.className="conf";c.textContent=a[Math.floor(Math.random()*a.length)];
+  c.style.left=Math.random()*100+"vw";c.style.fontSize=12+Math.random()*15+"px";c.style.animationDuration=2.5+Math.random()*2+"s";
+  document.body.appendChild(c);setTimeout(()=>c.remove(),5000)
+ },i*12)
+}
+</script>
+</body>
+</html>
